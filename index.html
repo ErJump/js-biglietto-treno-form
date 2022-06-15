@@ -31,26 +31,31 @@
                 <div class="col-6">
                     <button type="submit" class="btn btn-danger" id="reset-button">Annulla</button>
                 </div>       
-                <div class="col-12 mt-4">
-                    <span id="result" class="text-secondary"></span>
-                </div>
             </div>
         </div>
-        <h1 class="text-white text-center mb-3">Il tuo biglietto:</h1>
-        <div class="container bg-white rounded-5 p-5">
+        <h1 class="text-white text-center mb-3 d-none" id="ticket-text">Il tuo biglietto:</h1>
+        <div class="container bg-white rounded-5 p-5 d-none" id="user-ticket">
             <div class="row">
-                <div class="col-4 bg-dark" style="height: 250px;">
-                    <h2 class="mb-2 text-white fs-4">NOME DEL PASSEGGERO</h2>
+                <div class="col-4 bg-dark p-3" style="height: 250px;">
+                    <h2 class="mb-5 text-white fs-4">NOME DEL PASSEGGERO</h2>
                     <h3 id="passenger-name" class="text-white fs-5"></h3>
                 </div>
-                <div class="col-8 border border-dark border-1 row">
+                <div class="col-8 border border-dark border-1 row justify-content-around">
                     <div class="col-3 row flex-column justify-content-between p-3">
                         <div class="col-6"><strong>Offerta</strong></div>
-                        <div class="col-6">Biglietto Standard</div>
+                        <div class="col-6" id="user-promotion"></div>
                     </div>
                     <div class="col-3 row flex-column justify-content-between p-3">
                         <div class="col-6"><strong>Carrozza</strong></div>
                         <div class="col-6" id="carriage"></div>
+                    </div>
+                    <div class="col-3 row flex-column justify-content-between p-3">
+                        <div class="col-6"><strong>Codice CP</strong></div>
+                        <div class="col-6" id="cp-code"></div>
+                    </div>
+                    <div class="col-3 row flex-column justify-content-between p-3">
+                        <div class="col-6"><strong>Costo Biglietto</strong></div>
+                        <div class="col-6" id="ticket-price"></div>
                     </div>
                 </div>
             </div>

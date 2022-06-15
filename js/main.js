@@ -16,26 +16,35 @@ button.addEventListener('click', function(){
 
     //calcolo randomicamente il numero della carrozza
     document.getElementById("carriage").innerHTML = Math.floor(Math.random() * 10 + 1);
+
+    //calcolo randomicamente il numero del cp code
+    document.getElementById("cp-code").innerHTML = Math.floor(Math.random() * 10000 + 90000);
     
+    //rimuovo la classe d-none per mostrare gli elementi a schermo fin'ora nascosti
+    document.getElementById("user-ticket").classList.remove("d-none");
+    document.getElementById("ticket-text").classList.remove("d-none");
+
     //casi per età
     if (userAge < 18){
         //nel caso di minorenni viene applicato un 15% di sconto
         result = (normalPrice - ((normalPrice * 15) / 100)).toFixed(2);
-        document.getElementById("result").innerHTML = `Sei giovine. Il prezzo del tuo biglietto è ${result}€ già scontato.`;
+        document.getElementById("ticket-price").innerHTML = `${result}€`;
+        document.getElementById("user-promotion").innerHTML = "Young - Under 18";
     } else if (userAge >= 65){
         //nel caso di maggiori di 65 anni viene applicato un 35% di sconto
         result = (normalPrice - ((normalPrice * 35) / 100)).toFixed(2);
-        document.getElementById("result").innerHTML = `Sei vecchio. Il prezzo del tuo biglietto è ${result}€ già scontato.`;
+        document.getElementById("ticket-price").innerHTML = `${result}€`;
+        document.getElementById("user-promotion").innerHTML = "Senior - Over 65";
     } else {
         //altrimenti non viene applicato sconto e mostrato il prezzo di base
-        document.getElementById("result").innerHTML = `Il prezzo del tuo biglietto è ${normalPrice}€.`;
+        document.getElementById("ticket-price").innerHTML = `${normalPrice}€`;
+        document.getElementById("user-promotion").innerHTML = "Tariffa base";
     }
 });
 
-
-//quando reset viene clickato i valori degli input diventano null
+//quando reset viene clickato i valori degli input diventano una stringa vuota
 buttonReset.addEventListener('click', function(){
-    document.getElementById("input-user-age").value = null;
-    document.getElementById("input-user-km").value = null;
-    document.getElementById("input-user-nominative").value = null;
+    document.getElementById("input-user-age").value = "";
+    document.getElementById("input-user-km").value = "";
+    document.getElementById("input-user-nominative").value = "";
 });
