@@ -6,10 +6,17 @@ button.addEventListener('click', function(){
     //dichiaro le variabili chiedendo all'utente età e km tramite i tag input
     const userAge = parseInt(document.getElementById("input-user-age").value);
     const userTravel = parseInt(document.getElementById("input-user-km").value);
+    const userName = document.getElementById("input-user-nominative").value;
     //calcolo il prezzo base
     const normalPrice = (userTravel * 0.26).toFixed(2);
     let result;
-    console.log({userAge});
+
+    //il contenuto del tag con id passenger name viene sostituito con il nome dell'utente 
+    document.getElementById("passenger-name").innerHTML = userName;
+
+    //calcolo randomicamente il numero della carrozza
+    document.getElementById("carriage").innerHTML = Math.floor(Math.random() * 10 + 1);
+    
     //casi per età
     if (userAge < 18){
         //nel caso di minorenni viene applicato un 15% di sconto
@@ -25,6 +32,8 @@ button.addEventListener('click', function(){
     }
 });
 
+
+//quando reset viene clickato i valori degli input diventano null
 buttonReset.addEventListener('click', function(){
     document.getElementById("input-user-age").value = null;
     document.getElementById("input-user-km").value = null;

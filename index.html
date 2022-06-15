@@ -15,15 +15,15 @@
             <div class="row g-3">
                 <div class="col-4 d-flex flex-column align-items-center">
                     <label for="input-user-nominative" class="form-label">Inserisci Nome e Cognome</label>
-                    <input type="text" class="form-control" id="input-user-nominative">
+                    <input type="text" class="form-control border-danger" id="input-user-nominative">
                 </div>
                 <div class="col-4 d-flex flex-column align-items-center">
                     <label for="input-user-age" class="form-label">Inserisci la tua età</label>
-                    <input type="number" class="form-control" id="input-user-age">
+                    <input type="number" class="form-control border-danger" id="input-user-age">
                 </div>
                 <div class="col-4 d-flex flex-column align-items-center">
                     <label for="input-user-km" class="form-label">Inserisci i km da compiere</label>
-                    <input type="number" class="form-control" id="input-user-km">
+                    <input type="number" class="form-control border-danger" id="input-user-km">
                 </div>
                 <div class="col-6 text-end">
                     <button type="submit" class="btn btn-primary d-inline" id="submit-button">Invia</button>
@@ -37,7 +37,24 @@
             </div>
         </div>
         <h1 class="text-white text-center mb-3">Il tuo biglietto:</h1>
-        
+        <div class="container bg-white rounded-5 p-5">
+            <div class="row">
+                <div class="col-4 bg-dark" style="height: 250px;">
+                    <h2 class="mb-2 text-white fs-4">NOME DEL PASSEGGERO</h2>
+                    <h3 id="passenger-name" class="text-white fs-5"></h3>
+                </div>
+                <div class="col-8 border border-dark border-1 row">
+                    <div class="col-3 row flex-column justify-content-between p-3">
+                        <div class="col-6"><strong>Offerta</strong></div>
+                        <div class="col-6">Biglietto Standard</div>
+                    </div>
+                    <div class="col-3 row flex-column justify-content-between p-3">
+                        <div class="col-6"><strong>Carrozza</strong></div>
+                        <div class="col-6" id="carriage"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 <script src="js/main.js"></script>
 </body>
